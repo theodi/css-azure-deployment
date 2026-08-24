@@ -1,3 +1,4 @@
+param string config = loadFileAsBase64('./config.json')
 param configName string = 'config.json'
 param location string = 'West Europe'
 param planName string = 'cssdeployment'
@@ -24,7 +25,6 @@ resource storage 'Microsoft.Storage/storageAccounts@2023-05-01' = {
 }
 
 var storageKey = storage.listKeys().keys[0].value
-var config = loadFileAsBase64('./config.json')
 
 resource deploymentScript 'Microsoft.Resources/deploymentScripts@2023-08-01' = {
   name: 'UploadConfig'
