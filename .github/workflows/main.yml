@@ -9,6 +9,8 @@ jobs:
       id-token: write
       contents: read
     runs-on: ubuntu-latest
+    environment: 
+      name: CSS
     steps:
     - uses: actions/checkout@main
 
