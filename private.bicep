@@ -67,6 +67,9 @@ resource storagePrivateEndpointFiles 'Microsoft.Network/privateEndpoints@2023-09
       }
     ]
   }
+  dependsOn: [
+    vnet
+  ]
 }
 
 resource privateFilesDnsZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
